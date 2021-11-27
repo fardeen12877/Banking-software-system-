@@ -28,55 +28,7 @@ public static void main(String args[])throws IOException, InterruptedException {
         System.out.println();
         System.out.print(" ------------Enter Option [1-5]: ");
         Option = Integer.parseInt(br.readLine());
-        switch(Option) {
-            case 1 : System.out.println("Enter a customer name :");
-                     Name = br.readLine();
-                     System.out.println("Enter a opening balance :");
-                     Balance = Double.parseDouble(br.readLine());
-                     Thread.sleep(200);
-                     System.out.println("Creating your account....");
-                     Thread.sleep(200);
-                     int[] arrDetails= myBank.AddNewAccount(Name, Balance);
-                     System.out.println("Account Has been created\n Account number: " + arrDetails[0]+"\nYour password : "+ arrDetails[1]);
-                     break;
-            case 2 : System.out.println("Enter a account number :");
-                     Account_Number = Integer.parseInt(br.readLine());
-                     System.out.println("Enter a account password :");
-                     Account_Password = Integer.parseInt(br.readLine());
-                     System.out.println("Enter a deposit amount :");
-                     Money = Double.parseDouble(br.readLine());
-                     myBank.Deposit(Account_Number, Account_Password, Money);
-                     break;
-            case 3 : System.out.println("Enter a account number :");
-                     Account_Number = Integer.parseInt(br.readLine());
-                     System.out.println("Enter a account password :");
-                     Account_Password = Integer.parseInt(br.readLine());
-                     System.out.println("Enter a deposit amount :");
-                     Money = Double.parseDouble(br.readLine());
-                     myBank.Withdraw(Account_Number, Account_Password, Money);
-                     break;
-            case 4 : System.out.println("Enter a account number :");
-                     Account_Number = Integer.parseInt(br.readLine());
-                     System.out.println("Enter a account password :");
-                     Account_Password = Integer.parseInt(br.readLine());
-                     myBank.Transactions(Account_Number, Account_Password);
-                     break;
-            case 5 : System.out.println("Please Enter your password :");
-                     Pass = Integer.parseInt(br.readLine());
-                     if(Pass == myBank.Password) {
-                         System.out.println("------------- System shutting down.....");
-                         Option = 5;
-                         break;
-                     }
-                     else {
-                         Thread.sleep(250);
-                         System.out.println("You have enter a wrong password. Please try again");
-                         Option = 0;
-                     }
-            default: System.out.println("Invalid option. Please try again.");
-        }
-    }
-}
+       
 static class Bank {
     private int Pass
 
